@@ -209,7 +209,7 @@ if __name__ == '__main__':
 
     ## seed everything
     set_seed(config.seed)
-
+    wandb.login(key="cbcabc061fb4a62d6ebeae24db563b71d7747fb6")
     diffuser = Diffusion(config.noise_steps, img_size=config.img_size, num_classes=config.num_classes)
     with wandb.init(project="train_sd", group="train", config=config):
         diffuser.prepare(config)
